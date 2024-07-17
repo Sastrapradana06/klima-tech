@@ -1,5 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Navbar } from "~/components/navbar";
+import HomeView from "~/view/home";
+import ServicesView from "~/view/services";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,9 +15,11 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <main className="w-full min-h-[100vh] max-h-max border border-black text-black">
-      <div className="w-full h-max p-2 relative">
+    <main className="w-full h-max  text-black pb-10">
+      <div className="w-full h-max p-2 relative" id="home">
         <Navbar />
+        <HomeView />
+        <ServicesView />
       </div>
     </main>
   );

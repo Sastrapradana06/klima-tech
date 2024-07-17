@@ -10,8 +10,8 @@ export const Navbar = () => {
     return (
       <Link to={link}>
         <li
-          className={` hover:text-red-500 duration-150 ${
-            hash == link ? "text-red-500" : "text-gray-600"
+          className={` hover:text-orange-500 duration-150 ${
+            hash == link ? "text-orange-500" : "text-gray-600"
           }`}
         >
           {teks}
@@ -38,8 +38,8 @@ export const Navbar = () => {
             <div className="w-max m-auto  h-max p-2">
               <ul className=" flex flex-col gap-3 font-semibold  items-center">
                 <TextList teks="Home" link="#home" />
-                <TextList teks="About Us" link="#about" />
                 <TextList teks="Services" link="#services" />
+                <TextList teks="Journey" link="#about" />
                 <TextList teks="Contact Us" link="#contact" />
               </ul>
             </div>
@@ -57,8 +57,8 @@ export const Navbar = () => {
           <div className="w-max h-max  hidden lg:inline-block md:inline-block">
             <ul className="flex items-center gap-5 text-[.9rem] cursor-pointer font-semibold ">
               <TextList teks="Home" link="#home" />
-              <TextList teks="About Us" link="#about" />
               <TextList teks="Services" link="#services" />
+              <TextList teks="Journey" link="#about" />
               <TextList teks="Contact Us" link="#contact" />
             </ul>
           </div>
