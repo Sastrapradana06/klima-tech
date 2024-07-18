@@ -39,7 +39,7 @@ export const Navbar = () => {
               <ul className=" flex flex-col gap-3 font-semibold  items-center">
                 <TextList teks="Home" link="#home" />
                 <TextList teks="Services" link="#services" />
-                <TextList teks="Journey" link="#about" />
+                <TextList teks="Journey" link="#journey" />
                 <TextList teks="Contact Us" link="#contact" />
               </ul>
             </div>
@@ -58,7 +58,7 @@ export const Navbar = () => {
             <ul className="flex items-center gap-5 text-[.9rem] cursor-pointer font-semibold ">
               <TextList teks="Home" link="#home" />
               <TextList teks="Services" link="#services" />
-              <TextList teks="Journey" link="#about" />
+              <TextList teks="Journey" link="#journey" />
               <TextList teks="Contact Us" link="#contact" />
             </ul>
           </div>

@@ -23,7 +23,7 @@ export default function ServicesView() {
   ];
 
   return (
-    <div className="w-full h-max mt-[350px]  lg:mt-[150px]" id="services">
+    <div className="w-full h-max mt-[350px]  lg:mt-[150px] ">
       <div className="w-[90%] max-h-max m-auto  lg:w-[85%]">
         <div className="w-full h-max text-center">
           <h1 className="text-[1.1rem] font-semibold lg:text-[1.4rem]">

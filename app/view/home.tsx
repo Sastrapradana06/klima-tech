@@ -22,7 +22,7 @@ export default function HomeView() {
           <button className="w-[150px] h-[40px]  rounded-full bg-orange-500 text-white hover:bg-orange-600 duration-200">
             Contact Me
           </button>
-          <div className="flex gap-2 items-center mt-3">
+          <div className="flex gap-2 items-center mt-3" id="services">
             <div className="p-1 rounded-full bg-white ">
               <ChevronDown fill="orange" />
             </div>
