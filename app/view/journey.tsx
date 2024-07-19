@@ -6,7 +6,7 @@ export default function JourneyView() {
           <img
             src="/3dhome2.png"
             alt=""
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain "
           />
         </div>
         <div className="w-full h-max  lg:w-[40%] flex flex-col gap-1">

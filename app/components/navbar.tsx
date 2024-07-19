@@ -1,6 +1,13 @@
 import { Link, useLocation } from "@remix-run/react";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import {
+  ChevronsDown,
+  HandCoins,
+  House,
+  ListChecks,
+  Menu,
+  Send,
+} from "lucide-react";
+import { ReactNode, useState } from "react";
 
 export const Navbar = () => {
   const { hash } = useLocation();
@@ -20,34 +27,46 @@ export const Navbar = () => {
     );
   };
 
+  const TeksListIcons = ({
+    icons,
+    link,
+  }: {
+    icons: ReactNode;
+    link: string;
+  }) => {
+    return (
+      <Link
+        to={link}
+        className="p-2 rounded-full bg-[#ffa600] backdrop-blur-lg shadow-md"
+      >
+        {icons}
+      </Link>
+    );
+  };
+
   return (
     <>
-      {isMenu && (
-        <div className="fixed top-0 left-0 w-full h-[100vh] z-50 bg-[#00000042] flex justify-center">
-          <button
-            className="w-full h-full bg-transparent"
-            onClick={() => setIsMenu(false)}
-          ></button>
-          <div className="w-[90%] z-10 h-max border mt-20 rounded-lg bg-slate-100 absolute top-0">
-            <div className="w-full h-max p-2 flex justify-between items-center border-b border-black">
-              <h1 className=" font-semibold">Menu</h1>
-              <button onClick={() => setIsMenu(false)}>
-                <X />
-              </button>
-            </div>
-            <div className="w-max m-auto  h-max p-2">
-              <ul className=" flex flex-col gap-3 font-semibold  items-center">
-                <TextList teks="Home" link="#home" />
-                <TextList teks="Services" link="#services" />
-                <TextList teks="Journey" link="#journey" />
-                <TextList teks="Contact Us" link="#contact" />
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
+      <div
+        className={`fixed w-max h-[300px]  right-[1.8rem] top-[3.8rem] transition-transform  lg:hidden  ${
+          isMenu ? "translate-x-0" : "translate-x-[100px]"
+        }`}
+      >
+        <ul className="w-full flex flex-col gap-2 items-center">
+          <TeksListIcons icons={<House color="white" />} link={"#home"} />
+          <TeksListIcons
+            icons={<HandCoins color="white" />}
+            link={"#services"}
+          />
+          <TeksListIcons
+            icons={<ListChecks color="white" />}
+            link={"#journey"}
+          />
+          <TeksListIcons icons={<Send color="white" />} link={"#contact"} />
+        </ul>
+      </div>
+
       <nav className="fixed z-30 top-0 m-auto left-0 w-full h-max">
-        <div className="w-[90%] h-[50px] flex items-center justify-between px-5 m-auto mt-2 rounded-xl bg-[#ffffff8c] backdrop-blur-lg">
+        <div className="w-[90%] h-[50px] flex items-center justify-between px-4 lg:px-7 m-auto mt-2 rounded-xl bg-[#ffffff8c] backdrop-blur-lg">
           <div className="w-max h-max flex items-center gap-1">
             <img src="/logo1.svg" alt="logo" className="w-[20px]" />
             <h1 className="font-semibold lg:text-[1.2rem] tracking-[1px]">
@@ -55,16 +74,15 @@ export const Navbar = () => {
             </h1>
           </div>
           <div className="w-max h-max  hidden lg:inline-block md:inline-block">
-            <ul className="flex items-center gap-5 text-[.9rem] cursor-pointer font-semibold ">
+            <ul className="flex items-center gap-8 text-[.9rem] cursor-pointer font-semibold ">
               <TextList teks="Home" link="#home" />
               <TextList teks="Services" link="#services" />
               <TextList teks="Journey" link="#journey" />
-              <TextList teks="Contact Us" link="#contact" />
             </ul>
           </div>
           <div className="w-max h-max lg:hidden md:hidden">
             <button onClick={() => setIsMenu(!isMenu)}>
-              <Menu size={25} />
+              {isMenu ? <ChevronsDown size={30} /> : <Menu size={25} />}
             </button>
           </div>
         </div>

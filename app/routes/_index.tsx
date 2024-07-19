@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import { Mail, UserRound } from "lucide-react";
+import Footer from "~/components/footer";
 import { Navbar } from "~/components/navbar";
 import HomeView from "~/view/home";
 import JourneyView from "~/view/journey";
@@ -23,23 +24,49 @@ export default function Index() {
         <HomeView />
         <ServicesView />
         <JourneyView />
-        <div className="w-full h-max mt-[100px]  relative">
-          <div className="w-[85%] h-[60px] rounded-xl z-10 left-0 right-0 bg-orange-500 m-auto lg:w-[70%] absolute -top-[30px] flex items-center justify-between px-4  lg:px-10 lg:text-[1.3rem]">
-            <h1 className="text-white font-semibold">Ready to get started</h1>
-            <button className="border-2 border-white w-[100px] py-1 text-white text-[.9rem] rounded-xl lg:w-[130px]">
-              Contact Us
-            </button>
-          </div>
-          <div className="w-full h-[80px] bg-[#ffffffc5] backdrop-blur-lg flex justify-center items-center text-[.8rem]">
-            <p className="mt-6 text-gray-500">All right reserved 2024 |</p>
-            <Link
-              to="/privacy-policy"
-              className="text-orange-500 font-semibold mt-6 ml-1"
-            >
-              sastrapradana
-            </Link>
+        <div className="w-full h-max mt-[50px] " id="contact">
+          <div className="w-[85%] h-max  m-auto flex flex-col items-center gap-3  lg:flex-row-reverse lg:justify-center">
+            <div className="w-full h-max lg:w-[50%] ">
+              <img
+                src="/icons-contact.png"
+                alt=""
+                className="w-full h-[250px] object-contain lg:h-[300px] "
+              />
+            </div>
+            <div className="w-full h-max  lg:w-max flex flex-col lg:justify-end ">
+              <div className="w-max h-max">
+                <h1 className="text-[1.1rem] font-semibold lg:text-[1.5rem]">
+                  Contact us
+                </h1>
+              </div>
+              <div className="w-full h-max mt-2 flex flex-col gap-4 lg:w-[400px]">
+                <div className="w-full flex items-center p-3 gap-1 rounded-2xl bg-slate-100">
+                  <UserRound size={20} color="orange" />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    className="w-full h-full bg-transparent text-[.9rem] text-black outline-none"
+                  />
+                </div>
+                <div className="w-full flex items-center p-3 gap-1 rounded-2xl bg-slate-100">
+                  <Mail size={20} color="orange" />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full h-full bg-transparent text-[.9rem] text-black outline-none"
+                  />
+                </div>
+                <textarea
+                  name="pesan"
+                  placeholder="Message"
+                  id=""
+                  className="w-full h-[1003x] p-2 rounded-2xl bg-slate-100"
+                ></textarea>
+              </div>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     </main>
   );
