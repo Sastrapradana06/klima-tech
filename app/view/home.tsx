@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
@@ -37,7 +38,12 @@ export default function HomeView() {
             ref={textRef}
           ></p>
           <button className="w-[150px] h-[40px]  rounded-full bg-orange-500 text-white hover:bg-orange-600 duration-200 ">
-            Contact Me
+            <Link
+              rel="noopener noreferrer"
+              to="https://api.whatsapp.com/send?phone=6283870915417"
+            >
+              Contact Me
+            </Link>
           </button>
           <div
             className="flex gap-2 items-center mt-3 animate-bounce"

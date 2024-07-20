@@ -78,6 +78,7 @@ export const Navbar = () => {
               <TextList teks="Home" link="#home" />
               <TextList teks="Services" link="#services" />
               <TextList teks="Journey" link="#journey" />
+              <TextList teks="Contact Us" link="#contact" />
             </ul>
           </div>
           <div className="w-max h-max lg:hidden md:hidden">
